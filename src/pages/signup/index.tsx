@@ -16,7 +16,7 @@ const Signup: React.FC = () => {
     e.preventDefault();
     try {
       await api.auth.signup({ username, password, fullname });
-      navigate("/login"); // Redirect to login page after successful signup
+      navigate("/signin");
     } catch (error) {
       console.error("Signup failed:", error);
     }

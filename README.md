@@ -1,46 +1,137 @@
-# Getting Started with Create React App
+# Settlement Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a Settlement Management System built with Node.js, Express, Sequelize (PostgreSQL), and React. It includes WebSocket support via `socket.io` for real-time notifications.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Before running this project, ensure you have the following software installed on your machine:
 
-### `npm start`
+- [Node.js](https://nodejs.org/) (version 14.x or later)
+- [npm](https://www.npmjs.com/) (usually comes with Node.js)
+- [PostgreSQL](https://www.postgresql.org/) (version 12.x or later)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Setup Instructions
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Backend Setup
 
-### `npm test`
+1.  **Clone the repository:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ```sh
+    git clone https://github.com/momin0606/leyline-backend.git
+    cd <repository-directory>  //default value is leyline-backend
+    ```
 
-### `npm run build`
+2.  **Install backend dependencies:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```sh
+    npm install
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3.  **Create a `.env` file in the `leyline-backend` directory with the following content:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```plaintext
+    PORT=5000
+    JWT_SECRET=your_jwt_secret
+    ```
 
-### `npm run eject`
+4.  **Update the `config/config` file in the `leyline-backend` directory with the following content:**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+        ```plaintext
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    {
+    "development": {
+    "username": "your_postgres_username", //default is "postgres"
+    "password": "your_postgres_password", //default is "postgres"
+    "database": "postgres",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+    }
+    }
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    ```
 
-## Learn More
+5.  **Set up the database:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Ensure PostgreSQL is running and create a database with the name you specified in the `config/config.json` file in the `leyline-backend` directory.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Then run the migrations and seeders:
+
+    ```sh
+    npx sequelize-cli db:create
+    npx sequelize-cli db:migrate
+    ```
+
+6.  **Start the backend server:**
+
+    ```sh
+    npm start
+    ```
+
+### Frontend Setup
+
+1.  **Clone the repository:**
+
+    ```sh
+    git clone https://github.com/momin0606/leyline-ui.git
+    cd <repository-directory>  //default value is leyline-ui
+    ```
+
+2.  **Install frontend dependencies:**
+
+    ```sh
+    npm install
+    ```
+
+3.  **Start the frontend development server:**
+
+    ```sh
+    npm start
+    ```
+
+### Running the Project
+
+After completing the setup steps, you should have the backend server running on `http://localhost:5000` and the frontend server running on `http://localhost:3000`.
+
+You can now access the application in your web browser at `http://localhost:3000`.
+
+### WebSocket Setup
+
+The backend server includes WebSocket support via `socket.io` for real-time notifications. The WebSocket connection is initialized and authenticated using a token.
+
+### Available API Endpoints
+
+- **Auth Routes:**
+
+  - `POST /auth/signup` - Register a new user
+  - `POST /auth/signin` - Log in a user and return a JWT
+
+- **User Routes:**
+
+  - `GET /users` - Get a list of all users (excluding the requesting user)
+
+- **Settlement Routes:**
+  - `GET /settlements` - Get a list of all settlements
+  - `GET /settlements/:id` - Get details of a specific settlement by ID
+  - `POST /settlements` - Create a new settlement
+  - `PUT /settlements` - Update an existing settlement
+
+### Project Structure
+
+- `leyline-backend/` - Contains the backend code (Express server, Sequelize models, migrations, routes)
+- `leyline-ui/` - Contains the frontend code (React application)
+
+### Technologies Used
+
+- **Backend:**
+
+  - Node.js
+  - Express
+  - Sequelize (PostgreSQL)
+  - Socket.io
+  - JWT for authentication
+
+- **Frontend:**
+  - React
+  - Axios for API requests
