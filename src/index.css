@@ -1,0 +1,50 @@
+html,
+body {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #160c28;
+  --secondary: #efcb68;
+  --background: #e1efe6;
+  --lightText: #aeb7b3;
+  --text: #000411;
+  --white: white;
+  --black: black;
+  --error: #ef6868;
+
+  --size0: 0px;
+  --size1: 2px;
+  --size2: 4px;
+  --size3: 6px;
+  --size4: 8px;
+  --size5: 10px;
+  --size6: 12px;
+  --size7: 14px;
+  --size8: 16px;
+  --size9: 18px;
+  --size10: 20px;
+  --size11: 22px;
+  --size12: 24px;
+  --size13: 26px;
+  --size14: 28px;
+  --size15: 30px;
+  --size16: 32px;
+  --size17: 34px;
+  --size18: 36px;
+  --size19: 38px;
+  --size20: 40px;
+  --size21: 42px;
+  --size22: 44px;
+  --size23: 46px;
+  --size24: 48px;
+  --size25: 50px;
+}

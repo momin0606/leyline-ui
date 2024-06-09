@@ -1,0 +1,44 @@
+.container {
+  min-height: calc(100vh - 70px);
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  background: var(--background);
+}
+.welcomeContainer {
+  background: var(--white);
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: var(--size8) var(--size16);
+  justify-content: center;
+  gap: 1rem;
+  border-radius: var(--size5);
+}
+.loginLinks {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: var(--size16);
+  width: 100%;
+  justify-content: space-between;
+  margin-top: var(--size20);
+}
+.centerHeading {
+  text-align: center;
+  font-size: var(--size20);
+  font-weight: bold;
+}
+.welcomeText {
+  text-align: center;
+  font-size: var(--size16);
+  font-weight: bold;
+}
+.logoImage {
+  width: 20vw;
+  aspect-ratio: 1/1;
+  justify-self: center;
+}
+.buttonContainer {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 50%;
+}

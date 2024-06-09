@@ -1,0 +1,21 @@
+.container {
+  min-height: calc(100vh - 70px);
+  width: 100%;
+  display: grid;
+  background: var(--background);
+  padding: var(--size10) var(--size20);
+  align-items: start;
+  align-content: start;
+  gap: var(--size8);
+}
+.header {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: space-between;
+  align-items: start;
+  gap: var(--size8);
+}
+.heading {
+  font-size: var(--size10);
+  font-weight: bold;
+}

@@ -1,0 +1,42 @@
+.container {
+  min-height: calc(100vh - 70px);
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  background: var(--background);
+}
+.formContainer {
+  background: var(--white);
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: var(--size8) var(--size16);
+  justify-content: center;
+  gap: 1rem;
+  border-radius: var(--size5);
+}
+.signupText {
+  text-align: center;
+  font-size: var(--size16);
+  font-weight: bold;
+}
+.logoImage {
+  width: 20vw;
+  aspect-ratio: 1/1;
+  justify-self: center;
+}
+.loginLinks {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: var(--size16);
+  width: 100%;
+  justify-content: space-between;
+  margin-top: var(--size20);
+}
+.buttonContainer {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 50%;
+}
+.inputField {
+  padding: var(--size2) var(--size8);
+}

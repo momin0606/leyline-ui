@@ -1,0 +1,22 @@
+.container {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  padding: var(--size12) var(--size8);
+  background: var(--white);
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  align-items: center;
+}
+.authSection {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: var(--size8);
+}
+.logoImage {
+  height: var(--size10);
+  aspect-ratio: 1/1;
+}
+.logoContainer {
+  display: grid;
+  grid-template-columns: max-content max-content;
+}
